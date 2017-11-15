@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>云巴 Yunba - App、Web、物联网实时通讯云服务</title>
+	
+	<link rel="stylesheet" href="css/yunba.css">
+	<link rel="stylesheet" href="css/yunba1280.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/js/jquery1.9.1.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<script src="js/setRem.js"></script>
+	<link rel="stylesheet" href="css/swiper.min.css">
+    <script src="js/swiper.jquery.min.js"></script>
+    <script src="./js/yunba.js"></script>
+</head>
+<body>
+	<div class="fixed-video">
+		<span>×</span>
+		<video class="video" src="./img/yunba-mg.mp4" controls="controls">
+		您的浏览器不支持 video 标签。
+		</video>
+	</div>
+	<div class="header">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation"> 
+			<div class="content-box">
+				<div class="container-fluid"> 
+				    <div class="navbar-header"> 
+				    	<button type="button" class="navbar-toggle" data-toggle="collapse"
+			                data-target="#example-navbar-collapse">
+				            <span class="sr-only">切换导航</span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				            <span class="icon-bar"></span>
+				        </button>
+				        <a class="navbar-brand" href="#"><img src="img/logo3.png" alt=""></a> 
+				    </div> 
+				    <div id="example-navbar-collapse"  class="collapse navbar-collapse"> 
+				        <ul class="nav navbar-nav navbar-left"> 
+				        	<li class="dropdown"> 
+				                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+				                    快速入门 <b class="caret"></b> 
+				                </a> 
+				                <ul class="dropdown-menu"> 
+				                    <li><a href="#">快速入门</a></li> 
+				                    <li><a href="#">聊天室</a></li> 
+				                    <li><a href="#">直播弹幕</a></li> 
+				                   
+				                </ul> 
+				            </li>
+				            <li ><a href="#">产品介绍</a></li> 
+				            <li><a href="#">价格</a></li> 
+				            <li class="dropdown"> 
+				                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+				                    开发者资源 <b class="caret"></b> 
+				                </a> 
+				                <ul class="dropdown-menu"> 
+				                    <li><a href="#">SDK 下载</a></li> 
+				                    <li><a href="#">文档中心</a></li> 
+				                  
+				                </ul> 
+				            </li> 
+				            <li><a href="#">用户案例</a></li>
+				            <li><a href="#"> 博客</a></li>
+				            
+				        </ul> 
+				        <ul class="nav navbar-nav navbar-right">
+				        	<li><a href="" data-toggle="modal" data-target="#myModal1">登录</a></li>
+				        	<li><a href=""  data-toggle="modal" data-target="#myModal2">注册</a></li>
+				        </ul>
+				    </div> 
+		   		</div> 
+			</div>
+		    
+		</nav>
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form action="" method="">
+						<div class="h3 modal-header text-center">登录</div>
+						<div class="modal-body padding-40 modal-body-login">
+							<div class="form-group input-group  ">
+								<div class="input-group-addon">
+									<i class="glyphicon glyphicon-envelope min-width-30"></i>
+								</div>
+								<input type="text" placeholder="请输入用户名或电子邮箱" value="" id="login-username" class="form-control">
+							</div>
+							<span class="alert-text"></span>
+							<div class="form-group input-group  ">
+								<div class="input-group-addon">
+									<i class="glyphicon glyphicon-lock min-width-30"></i>
+								</div>
+								<input type="password" placeholder="请输入登录密码" value="" id="login-password" class="form-control">
+							</div>
+							<span class="alert-text"></span>
+							<input type="hidden" name="returnUrl">
+						</div>
+						<div class="modal-footer">
+							<div style="float:left;padding-top:5px">使用其它方式登录:
+								<span style="margin:0 5px" id="github_connect_btn" class="oauth_btn">
+									<a href="/auth/github/">
+									<img src="./img/github_logo.png" style="width:20px;padding-bottom:1px"></a>
+								</span>
+								<span style="margin:0 10px 0 5px" id="qq" class="oauth_btn">
+									<a href="/auth/qq/">
+									<img src="./img/qq_logo.png" style="width:20px">
+									</a>
+								</span>
+								<span style="margin:0" id="weibo" class="oauth_btn">
+									<a href="/auth/weibo/"><img src="./img/wb_logo.png" style="width:20px">
+									</a>
+								</span>
+							</div>
+
+							<button type="button" class="btn btn-default" data-dismiss="modal" data-target="#modal-forgot">忘记密码？
+							</button>
+
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+							</button>
+							<button type="button" class="btn btn-primary">
+								登录
+							</button>
+						</div>
+
+					</form>
+
+
+
+					
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form action="" method="post">
+						<div class="h3 modal-header text-center">注册</div>
+						<div class="modal-body padding-40 modal-body-reg">
+							<div class="warning">
+								
+							</div>
+							<div class="form-group input-group  ">
+								<div class="input-group-addon">
+									<i class="glyphicon glyphicon-envelope min-width-30"></i>
+								</div>
+								<input type="email" placeholder="电子邮箱, 请尽量不要使用腾讯邮箱进行注册" value="" id="reg-email" class="form-control">
+
+							</div>
+							<span class="alert-text"></span>
+							
+							<div class="form-group input-group  ">
+								<div class="input-group-addon">
+									<i class="glyphicon glyphicon-user min-width-30"></i>
+								</div>
+								<input type="password" placeholder="用户名" value="" class="form-control">
+							</div>
+							<span class="alert-text"></span>
+
+
+							<div class="form-group input-group  ">
+								<div class="input-group-addon">
+									<i class="glyphicon glyphicon-lock min-width-30"></i>
+								</div>
+								<input type="password" placeholder="请输入登录密码" value="" id="login-password" class="form-control">
+							</div>
+							<span class="alert-text"></span>
+
+							<div class="form-group input-group  ">
+								<div class="input-group-addon">
+									<i class="glyphicon glyphicon-lock min-width-30"></i>
+								</div>
+								<input type="password" placeholder="确认登录密码" value="" id="login-password" class="form-control">
+							</div>
+							<span class="alert-text"></span>
+
+							<div class="checkbox text-center">
+								<label>
+								<input type="checkbox" id="checkTermsInput"> 确认阅读并同意
+								<a href="/terms/" target="_blank" class="a-blue"> Yunba.io 用户协议</a>。
+								</label>
+							</div>
+
+							
+						</div>
+						<div class="modal-footer">
+							<div style="float:left;padding-top:5px">使用第三方登录快速接入:
+								<span style="margin:0 5px" id="github_connect_btn" class="oauth_btn">
+									<a href="/auth/github/">
+									<img src="./img/github_logo.png" style="width:20px;padding-bottom:1px"></a>
+								</span>
+								<span style="margin:0 10px 0 5px" id="qq" class="oauth_btn">
+									<a href="/auth/qq/">
+									<img src="./img/qq_logo.png" style="width:20px">
+									</a>
+								</span>
+								<span style="margin:0" id="weibo" class="oauth_btn">
+									<a href="/auth/weibo/"><img src="./img/wb_logo.png" style="width:20px">
+									</a>
+								</span>
+							</div>
+
+
+							<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+							</button>
+							<button type="button" class="btn btn-primary btn-creat disabled">
+								创建一个新账号
+							</button>
+						</div>
+
+					</form>
+
+
+
+					
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	</div>
+	<div class="home-hero">
+		
+    		<!-- <video  src="./img/yunba-mg.mp4" controls="controls">
+    			<source src="./img/yunba-mg.mp4" type="video/mp4"></source>
+    		</video> -->
+		
+		
+    	
+		<div class="lunbo">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+
+			        <div class="swiper-slide">
+			        	<div class="home-slide" >
+				        	<h2>App、Web、物联网实时通讯云服务</h2>
+				        	<p>专注于为需要实时数据交换的产品提供完美解决方案。</p><p>支持包括手机、Web、智能设备的几乎所有平台。</p>
+				        	<a href="#" data-toggle="modal" data-target="#home-video-modal" class="home-slide-button home-show-video">立即观看</a>
+				        	
+			        	</div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="home-slide"><h2>App、Web、物联网实时通讯云服务</h2><p>使用云巴，无需注册华为等开发者账号，极速集成推送功能</p><p>&nbsp;</p>
+			        	<a href="/docs/android_sdk_third_part_push" class="home-slide-button home-enable-third-part-push">开启一键推送</a></div>
+			        </div>
+			        <div class="swiper-slide">
+			        	<div class="home-slide"><h2>App、Web、物联网实时通讯云服务</h2><p>集成云巴 SDK，轻松实现视频直播互动功能</p><p>&nbsp;</p><a href="/docs/product_demo_bullet" class="home-slide-button home-get-start">开始使用</a></div>
+			        </div>
+			    </div>
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+			    
+			    <!-- 如果需要导航按钮 -->
+			   
+			   
+			</div>
+		</div>
+		<img src="img/home.png" alt="" class="home-hero-img">
+		<img src="img/1020px.png" alt="" class="stars">	
+	</div>
+	<div class="home-intro">
+		<div class="content-box1">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 home-intro-content">
+						<h2>云巴<sup>TM</sup>助你打造最佳实时应用</h2><div class="blue-line pull-right"></div>
+						<p>基于云巴的实时消息系统，</p>
+						<p>你可以轻松实现跨手机、浏览器、智能设备的实时通讯，</p>
+						<p>开发、部署大规模实时应用。</p>
+					</div>
+					<div class="col-xs-12">
+						<img src="img/introduce.jpg" class="home-intro-img">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home-feature">
+		<div class="content-box">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12">
+						<h2>产品主要功能</h2>
+						<div class="blue-line"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-2 home-feature-item feature-push">
+						<a href="/products/#push">
+							<img src="./img/push.png">
+							<h5>消息推送</h5>
+							<p>Push Notification</p>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-2 home-feature-item feature-realtime">
+						<a href="/products/#realtime">
+							<img src="./img/msg.png">
+							<h5>实时消息</h5>
+							<p>Realtime Messaging</p>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-2 home-feature-item feature-analytics">
+						<a href="/products/#analytics"><img src="./img/stat.png">
+							<h5>实时统计</h5>
+							<p>Analytics</p>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-2 home-feature-item feature-presence">
+						<a href="/products/#presence">
+							<img src="./img/user.png">
+							<h5>实时在线</h5>
+							<p>Presence</p>
+						</a>
+					</div>
+					<div class="col-xs-12 col-sm-2 home-feature-item feature-restful">
+						<a href="/docs2/restful_Quick_Start/">
+							<img src="./img/api.png">
+							<h5 class="rest-api-title">REST API</h5>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="usercase-list home-usercase-list">
+		<div class="content-box">
+			<div class="container-fluid">
+				<div class="row">
+				    <div class="col-sm-12 home-usercase-list-head">
+					    <h2>云巴示例和案例</h2>
+					    <p>我们为移动应用以及智能设备开发提供后端云服务，助你打造最佳实时应用</p>
+					    <div class="blue-line"> </div>
+				    </div>
+				    <div class="col-sm-12">
+				      	<div class="row">
+						    <div class="col-xs-12 col-md-4">
+						        <a href="#">
+						            <div class="usercase-list-item text-center">
+							            <h5>掌阅 iReader</h5>
+							            <img src="./img/case-ireader.png" alt="掌阅 iReader" title="掌阅 iReader">
+							            <p>老牌阅读软件，超过三亿人使用的阅读平台，拥有下载、试读、收藏、书城社区等功能。</p>
+							            <p>月活跃量在 5000万 以上，日并发量一亿。</p>
+						            </div>
+						        </a>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						        <a href="#">
+						            <div class="usercase-list-item text-center">
+							            <h5>即时通讯</h5>
+							            <img src="./img/icon.png" alt="即时通讯" title="即时通讯">
+							            <p>集成云巴 SDK，既可快速实现一对一聊天、多人在线聊天群或者无人数上限聊天室等，还可体验实时在线、实时统计等功能。</p>
+							            
+						            </div>
+						        </a>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						        <a href="#">
+						            <div class="usercase-list-item text-center">
+							            <h5>共享单车方案</h5>
+							            <img src="./img/icon (1).png" alt="云巴物联锁" title="云巴物联锁">
+							            <p>云巴共享单车整体解决方案提供智能锁、APP、云平台服务。云巴物联锁接入云巴实时通信服务，实现实时定位，移动端瞬时开锁，实时路径监控等功能</p>
+							        
+						            </div>
+						        </a>
+						    </div>
+						</div>
+						<div class="row">
+						    <div class="col-xs-12 col-md-4">
+						        <a href="#">
+						            <div class="usercase-list-item text-center">
+							            <h5>视频直播互动r</h5>
+							            <img src="./img/case-live-video.png" alt="视频直播" title="视频直播">
+							            <p>借助云巴的第三方直播互动技术，直播平台可快速实现弹幕、打赏、点赞、点爱心等直播互动功能。</p>
+							           
+						            </div>
+						        </a>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						        <a href="#">
+						            <div class="usercase-list-item text-center">
+							            <h5>甜园科技</h5>
+							            <img src="./img/icon (2).png" alt="甜园科技" title="甜园科技">
+							            <p>我们在比较了几个同样提供物联网云服务的产品之后，发现能够同时满足实时、高并发、稳定可靠等这几个需求的并不多，最终我们选择了云巴。</p>
+							            
+						            </div>
+						        </a>
+						    </div>
+						    <div class="col-xs-12 col-md-4">
+						        <a href="#">
+						            <div class="usercase-list-item text-center">
+							            <h5>智能手表</h5>
+							            <img src="./img/case-watch.png" alt="智能手表" title="智能手表">
+							            <p>云巴为智能手表厂商提供后端云服务技术开发支持，智能手表的实时对讲、实时位置信息分享等功能均可采用云巴的技术服务。</p>
+							        
+						            </div>
+						        </a>
+						    </div>
+						</div>	
+				    </div> 
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="home-media">	
+		<div class="content-box">
+			<div class="container-fluid">
+				<div class="row">
+				    <div class="col-sm-12">
+					    <h2 class="text-center">媒体报道</h2>
+					    <div class="blue-line"></div>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-sm-12 col-md-4">
+					    <div class="home-media-item">
+						    <a href="http://www.leiphone.com/news/201611/Ulxs4d7GRdXRIFJ0.html" target="_blank" rel="nofollow">
+						    	<img src="./img/leiphone.jpg">
+						    </a>
+						    <h3><a href="http://www.leiphone.com/news/201611/Ulxs4d7GRdXRIFJ0.html" target="_blank" rel="nofollow">第三方推送已死</a></h3>
+						    <p>主流的 Android 手机现在会自动清理后台，禁止服务自动拉起，以前第三方推送服务商的各种 SDK 保活手段相继失效，云巴一键集成厂商的推送服务解决难题。</p>
+					    </div>
+				    </div>
+				    <div class="col-sm-12 col-md-4">
+					    <div class="home-media-item home-media-item-center">
+						    <a href="" target="_blank" rel="nofollow">
+						    	<img src="./img/tob.jpg">
+						    </a>
+						    <h3><a href="" target="_blank" rel="nofollow">累计1.6万企业用户，云巴把重心放在“实时通讯”</a></h3>
+						    <p>目前云巴的注册用户已经超过 16000 个，以企业用户为主，每日调用 API 接口上亿次，每月约有400名新增用户。截止目前，在云巴平台注册的终端设备已经达到了数十亿台。</p>
+					    </div>
+				    </div>
+				    <div class="col-sm-12 col-md-4">
+					    <div class="home-media-item">
+						    <a href="" target="_blank" rel="nofollow">
+						    	<img src="./img/iheima.jpg">
+						    </a>
+						    <h3><a href="" target="_blank" rel="nofollow">A 轮后云巴想解决直播弹幕压力大的难题</a></h3>
+						    <p>云巴所提供的实时消息通信服务，就能够支持大规模的高并发量通信场景，帮助解决大量用户在线，直播弹幕压力大等问题。</p>
+					    </div>
+				    </div> 
+				</div>
+				<div class="row">
+				    <div class="col-md-12 text-center">
+					    <a href="" class="btn btn-primary btn-common-large">查看更多</a>
+				    </div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="content-box hidden-xs">
+			<div class="container-fluid">
+				<div class="row">
+				    <div class="col-xs-12 col-md-8 pull-right">
+				        <div class="row">
+						    <div class="col-xs-12 col-sm-2 footer-list-item">
+						       <h4><a href="" class="footer-list-head">产品</a></h4>
+						       <ul>
+							       	<li><a href="">消息推送</a></li>
+							       	<li><a href="">实时消息</a></li>
+							       	<li><a href="">实时统计</a></li>
+							       	<li><a href="">实时在线</a></li>
+						       </ul>
+						    </div>
+						    <div class="col-xs-12 col-sm-2 footer-list-item">
+						       <h4><a href="" class="footer-list-head">价格</a></h4>
+						       <ul>
+						
+						       </ul>
+						    </div>
+						    <div class="col-xs-12 col-sm-2 footer-list-item">
+						       <h4><a href="" class="footer-list-head"> 开发者资源</a></h4>
+						       <ul>
+							       	<li><a href="">SDK下载</a></li>
+							       	<li><a href="">文档中心</a></li>
+							       
+						       </ul>
+						    </div>
+						    <div class="col-xs-12 col-sm-2 footer-list-item">
+						       <h4><a href="" class="footer-list-head">公司</a></h4>
+						       <ul>
+							       	<li><a href="">关于我们</a></li>
+							       	<li><a href="">联系我们</a></li>
+							       	<li><a href="">人才招聘</a></li>
+							       	<li><a href="">媒体报道</a></li>
+						       </ul>
+						    </div>
+						    <div class="col-xs-12 col-sm-2 footer-list-item">
+						       <h4><a href="" class="footer-list-head">博客</a></h4>
+						       <ul>
+							       	<li>
+							       		<a href="">QQ 群 453727761</a>
+							       		<img src="./img/qq-group-barcode.jpg" alt="">
+							       	</li>
+							       	<li><a href="">Wechat  </a></li>
+							       	<li><a href="">Weibo</a></li>
+							      
+						       </ul>
+						    </div>
+						    <div class="col-xs-12 col-sm-2 footer-list-item">
+						       <h4><a href="" class="footer-list-head">友情链接</a></h4>
+						       <ul class="list-unstyled">
+							       	<li><a href="">APICloud</a></li>
+							      
+						       </ul>
+						    </div>
+					
+						</div>
+				    </div>
+				    <div class="col-xs-12 col-md-4 footer-company pull-left">
+				        <h4>
+					        <a href="">	
+					        	<img src="./img/logo-footer (1).png" alt="" class="footer-logo">
+					        </a>
+				        </h4>
+				        <ul class="list-unstyled">
+				        	<li><a href="">© 2013-2016 深圳市微智云科技有限公司</a></li>
+				        	<li><a href="">Terms & Conditions</a></li>
+				        	<li><a href="">Privacy Policy</a></li>
+				        	<li><a href="">粤ICP备14035779号</a></li>
+				        	<li><a href=""><img src="./img/govIcon.gif" alt="" class="foot-icon"></a></li>
+				        </ul>
+				    </div>
+				
+				</div>
+			</div>
+		</div>
+		<div class="content-box visible-xs">
+			<h4>
+				<a href="/"><img src="./img/logo-footer-2 (1).png" class="footer-logo"></a>
+			</h4>
+			<div class="container-fluid footer-main-content">
+				<div class="row">
+				    <div class="col-xs-3 col-sm-2 footer-list-item">
+				       <h4><a href="" class="footer-list-head">产品</a></h4>
+				       <ul>
+					       	<li><a href="">消息推送</a></li>
+					       	<li><a href="">实时消息</a></li>
+					       	<li><a href="">实时统计</a></li>
+					       	<li><a href="">实时在线</a></li>
+				       </ul>
+				    </div>
+				    <div class="col-xs-3 col-sm-2 footer-list-item">
+				       <h4><a href="" class="footer-list-head"> 开发者资源</a></h4>
+				       <ul>
+					       	<li><a href="">SDK下载</a></li>
+					       	<li><a href="">文档中心</a></li>
+					       
+				       </ul>
+				    </div>
+				    <div class="col-xs-3 col-sm-2 footer-list-item">
+				       <h4><a href="" class="footer-list-head">公司</a></h4>
+				       <ul>
+					       	<li><a href="">关于我们</a></li>
+					       	<li><a href="">联系我们</a></li>
+					       	<li><a href="">人才招聘</a></li>
+					       	<li><a href="">媒体报道</a></li>
+				       </ul>
+				    </div>
+				    <div class="col-xs-3 col-sm-2 footer-list-item">
+				       <h4><a href="" class="footer-list-head">博客</a></h4>
+				       <ul>
+					       	<li>
+					       		<a href="">QQ 群 453727761</a>
+					       	
+					       	</li>
+					       	<li><a href="">Wechat  </a></li>
+					       	<li><a href="">Weibo</a></li>
+					      
+				       </ul>
+				    </div>
+				  
+			
+				</div>
+			</div>	
+		</div>
+		
+	</div>
+	<div class="col-xs-12 page-bottom visible-xs text-center">
+		©2013-2016 深圳市微智云科技有限公司&nbsp;
+			<a href="/terms/">Terms &amp; Conditions</a>&nbsp;<a href="" target="_blank" rel="nofollow">粤ICP备14035779号</a><a href="" target="_blank"><img src="./img/govIcon.gif" title="深圳市市场监督管理局企业主体身份公示" alt="深圳市市场监督管理局企业主体身份公示" width="18" height="25" border="0" style="border-width:0px;border:hidden; border:none;"></a>
+	</div>
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+  autoplay: 2000,
+    loop: true,
+    pagination : '.swiper-pagination',
+effect : 'fade',
+fade: {
+  crossFade: true,
+}
+ 
+  })        
+</script>
+</body>
+</html>

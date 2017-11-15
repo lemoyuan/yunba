@@ -1,0 +1,135 @@
+
+@media screen and (max-width: 1600px){
+	.home-hero-img {
+	width: 10.9rem;
+
+	}
+	.home-hero{
+	height: 767px;
+	}
+	.stars{
+		width: 10.27rem;height: 10.27rem;
+	}
+}
+@media screen and (min-width: 1600px){
+	.home-hero-img {
+	width: 13.72rem;
+	height: 7.55rem;
+
+	}
+	.stars{
+		width: 15.22rem;height: 15.22rem;top: -8.9rem;
+	}
+	.home-hero{
+	height: 910px;
+	}
+
+}
+@media screen and (max-width:1280px){
+	.content-box {
+	     width: 95%;
+	    
+	}
+	.home-hero-img {
+	width:9.26rem;
+	height: 5.10rem;
+	}
+	.content-box1 {
+	     width: 95%;
+	    
+	}
+	.content-box .navbar-left>li>a,.content-box .navbar-right>li>a {
+	    font-size: 14px;}
+    .navbar-brand img {
+    width: 135px;}
+
+@media screen and (max-width:1080px){
+
+}
+@media screen and (max-width: 992px){
+	.content-box1 .home-intro-content {
+	    position: relative;
+	    text-align: center;
+	}
+	.home-hero{
+		height: 485px;
+	}
+}
+@media screen and (max-width: 768px){
+	.content-box .navbar-left>li>a {
+	    line-height: 30px;
+	}
+	.footer .footer-main-content {
+    padding-left: 0.8rem;
+	}
+	.footer-logo, .footer-social-media {
+    height: .35rem;
+    width: auto;
+	}
+	.footer li {
+    line-height: 0.5rem;
+	}
+	.footer, .footer-company, .footer-list-item {
+	padding-top: .1rem;
+	}
+	.page-bottom {
+	margin-top: 0.6rem;
+	margin-bottom: 1rem;
+	font-size: .25rem;
+	color: #999;
+	}
+	.page-bottom a{
+		color: #999;
+	}
+	.page-bottom a:hover{
+		color: #999;
+	}
+	.home-feature .feature-analytics,.home-feature .feature-presence {
+    width: 19%;
+	}
+	.home-feature .feature-push,.home-feature .feature-realtime {
+    width: 22%;
+	}
+	.home-feature .feature-restful {
+	    width: 18%;
+	}
+	.home-feature-item img {
+    width: 0.7rem;
+	}
+	.home-feature-item h5 {
+    font-size: .25rem;
+	}
+	.home-feature-item p {
+    font-size: .2rem;
+	}
+	.home-feature h2 {
+    font-size: 0.5rem;
+    margin: 0.8rem 0;
+	}
+	.home-feature .blue-line {
+   
+    top: -19px;
+	}
+	.home-hero-img {
+        margin-top: 2.7rem;
+	}
+	.stars {
+
+    top: -5.7rem;}
+    .footer .footer-company a, .footer .footer-list-item a {
+    color: #999;
+    font-size: .27rem;
+	}
+	.header .navbar-nav {
+    margin: 7.5px 22px;
+	}
+}
+
+
+
+
+
+
+
+
+
